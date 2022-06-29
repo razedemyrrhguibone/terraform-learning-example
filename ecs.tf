@@ -17,13 +17,17 @@ resource "aws_ecs_capacity_provider" "tflearning-ecs-capacity-provider" {
 }
 
 resource "aws_ecs_cluster" "tflearning-ecs-cluster" {
-  name               = var.cluster_name
-  capacity_providers = [aws_ecs_capacity_provider.tflearning-ecs-capacity-provider.name]
+  name = var.cluster_name
   tags = {
     name      = "tflearning"
     env       = "development"
     createdBy = "sky"
   }
+}
+
+resource "aws_ecs_cluster_capacity_providers" "tflearning-ecs-cluster-capacity-providers" {
+  cluster_name       = aws_ecs_cluster.tflearning-ecs-cluster.name
+  capacity_providers = [aws_ecs_capacity_provider.tflearning-ecs-capacity-provider.name]
 }
 
 data "template_file" "tflearning-container-definitions" {
@@ -34,6 +38,7 @@ resource "aws_ecs_task_definition" "tflearning-ecs-task-definition" {
   family                = "tflearning-ecs-task-definition"
   container_definitions = data.template_file.tflearning-container-definitions.rendered
   network_mode          = "bridge"
+  execution_role_arn    = aws_iam_role.tflearning-ecs-iam-role.arn
   tags = {
     name      = "tflearning"
     env       = "development"
@@ -79,4 +84,3 @@ resource "aws_cloudwatch_log_group" "tflearning-cloudwatch-log-group" {
     createdBy = "sky"
   }
 }
-

@@ -3,7 +3,7 @@ resource "aws_lb" "tflearning-lb" {
   load_balancer_type = "application"
   internal           = false
   subnets            = module.vpc.public_subnets
-  security_groups = [aws_security_group.tflearning-load-balancer-security-group.id]
+  security_groups    = [aws_security_group.tflearning-load-balancer-security-group.id]
   tags = {
     name      = "tflearning"
     env       = "development"
@@ -25,7 +25,7 @@ resource "aws_lb_target_group" "tflearning-lb-target-group" {
     interval            = 300
     matcher             = "200,301,302"
   }
-  
+
   tags = {
     name      = "tflearning"
     env       = "development"

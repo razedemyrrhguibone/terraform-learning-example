@@ -10,7 +10,7 @@ variable "cluster_name" {
   description = "The name of your ECS Cluster"
 }
 
-variable "key_name" {
-  type        = string
-  description = "The key name of your EC2 Key Pair"
-}
+# variable "key_name" {
+#   type        = string
+#   description = "The key name of your EC2 Key Pair"
+# }
