@@ -32,6 +32,9 @@ resource "aws_ecs_cluster_capacity_providers" "tflearning-ecs-cluster-capacity-p
 
 data "template_file" "tflearning-container-definitions" {
   template = file("definitions/container-definitions.json")
+  vars = {
+    region_name = var.region_name
+  }
 }
 
 resource "aws_ecs_task_definition" "tflearning-ecs-task-definition" {

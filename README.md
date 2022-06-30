@@ -3,9 +3,10 @@
 1. clone
 2. cd terraform-learning-example
 3. Create an EC2 Key Pair (Optional)
-4. terraform init
-5. terraform plan
-6. terraform apply
+4. Add your container image url in "container-definitions.json" file.
+5. terraform init
+6. terraform plan
+7. terraform apply
 
 ## Execution Steps to delete infrastructure
 1. Scale down EC2 auto scaling group

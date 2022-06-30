@@ -1,7 +1,7 @@
 [
   {
     "name": "tflearning",
-    "image": "747681008130.dkr.ecr.eu-west-2.amazonaws.com/tflearning:latest",
+    "image": "<container image url here...>",
     "cpu": 10,
     "memory": 256,
     "essential": true,
@@ -14,7 +14,7 @@
       "logDriver": "awslogs",
       "options": {
         "awslogs-group": "/ecs/tflearning",
-        "awslogs-region": "eu-west-2"
+        "awslogs-region": "${region_name}"
       }
     }
   }
