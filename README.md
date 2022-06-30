@@ -32,6 +32,7 @@ Details:
 3. `aws_ecs_cluster_capacity_providers` - defines the capacity provider used in the cluster.
 4. `aws_ecs_task_definition` - configurations for the containers.
 5. `aws_ecs_service` - main resource to run ECS instances.
+6. `aws_cloudwatch_log_group` - cloudwatch resource attached to our ecs instances for log tracing.
 
 `iam.tf` - also known as "Identity and Access Management". This provides role accesses for resources.\
 `main.tf` - declare providers.\
