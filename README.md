@@ -4,9 +4,9 @@
 2. cd terraform-learning-example
 3. Create an EC2 Key Pair (Optional)
 4. Add your container image url in "container-definitions.json" file.
-5. terraform init
-6. terraform plan
-7. terraform apply
+5. `terraform init`
+6. `terraform plan`
+7. `terraform apply`
 
 ## Execution Steps to delete infrastructure
 1. Scale down EC2 auto scaling group
@@ -19,8 +19,8 @@
 2. aws_lb_target_group - load balancer security target group using region VPC as subnets.
 3. aws_lb_listener - the route request enabled to be recieved by load balancer.
 
-`ami.tf` - also known as "Amazon Machine Images". This is an image configuration for running EC2 instances via launch configuration on autoscaling group.
-`asg.tf` - also known as "Autoscaling Group". This enables scale out configuration of EC2 instances and requires the load balancer arn.
+`ami.tf` - also known as "Amazon Machine Images". This is an image configuration for running EC2 instances via launch configuration on autoscaling group.\
+`asg.tf` - also known as "Autoscaling Group". This enables scale out configuration of EC2 instances and requires the load balancer arn.\
 Details:
 1. `aws_launch_configuration` - resource configuration to launch auto scale for EC2 instances via Load Balancer.
 2. `aws_autoscaling_group` - main configuration for auto scaling EC2 instances.
@@ -33,9 +33,9 @@ Details:
 4. `aws_ecs_task_definition` - configurations for the containers.
 5. `aws_ecs_service` - main resource to run ECS instances.
 
-`iam.tf` - also known as "Identity and Access Management". This provides role accesses for resources.
-`main.tf` - declare providers.
-`outputs.tf` - get outputs from resources and print it once you run the terraform command.
-`security-group.tf` - declare security groups that is required by other resources.
-`variables.tf` - setup for input items that can be provided inside terraform execution.
+`iam.tf` - also known as "Identity and Access Management". This provides role accesses for resources.\
+`main.tf` - declare providers.\
+`outputs.tf` - get outputs from resources and print it once you run the terraform command.\
+`security-group.tf` - declare security groups that is required by other resources.\
+`variables.tf` - setup for input items that can be provided inside terraform execution.\
 `vpc.tf` - also known as "Virtual Private Cloud". Using a terraform vpc module, creation of private network with high availability can be achieved and be used by other resources that requires it.
