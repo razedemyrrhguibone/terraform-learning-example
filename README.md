@@ -34,7 +34,7 @@ Details:
 5. `aws_ecs_service` - main resource to run ECS instances.
 6. `aws_cloudwatch_log_group` - cloudwatch resource attached to our ecs instances for log tracing.
 
-`iam.tf` - also known as "Identity and Access Management". This provides role accesses for resources.\
+`iam.tf` - also known as "Identity and Access Management". This provides role accesses for certain resources.\
 `main.tf` - declare providers.\
 `outputs.tf` - get outputs from resources and print it once you run the terraform command.\
 `security-group.tf` - declare security groups that is required by other resources.\
