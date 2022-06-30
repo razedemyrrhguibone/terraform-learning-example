@@ -25,7 +25,7 @@ Details:
 1. `aws_launch_configuration` - resource configuration to launch auto scale for EC2 instances via Load Balancer.
 2. `aws_autoscaling_group` - main configuration for auto scaling EC2 instances.
 
-`ecs.tf` - also known as "Elastic Container Service". A service holding out container instances.
+`ecs.tf` - also known as "Elastic Container Service". A service holding out container instances.\
 Details:
 1. `aws_ecs_capacity_provider` - provides scaling of ECS instances.
 2. `aws_ecs_cluster` - main resource that holds ECS tasks and instances.
